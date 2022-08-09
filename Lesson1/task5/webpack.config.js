@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "review_build"),
   },
@@ -22,10 +23,5 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
-  devServer: {
-    contentBase: __dirname,
-    inline: true,
-    host: "0.0.0.0",
-    port: 8080,
-  },
 };
+v;
