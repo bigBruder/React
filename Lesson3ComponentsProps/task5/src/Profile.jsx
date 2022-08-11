@@ -7,10 +7,11 @@ export default function Profile(props) {
   return (
     <>
     <div className="profile__name">
-    `${props.firstName} ${props.lastName}`
+    {`${props.firstName} ${props.lastName}. `}
+
 </div>
     <div className="profile__birth">
-    `Was born ${formatDate(props.birthDate)} in ${props.birthPlace}`
+    {`Was born ${formatDate(props.birthDate)} in ${props.birthPlace}`}
 </div>
 </>
   );
