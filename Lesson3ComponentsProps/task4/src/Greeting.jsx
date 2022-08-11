@@ -1,12 +1,12 @@
 import React from "react";
 import moment from "moment";
 
-// const formatDate = birthDate => moment(birthDate, "YYYYMMDD").from();
-
 export default function Greeting(props) {
+  const formatDate = birthDate => moment(birthDate).format("YYYY");
+const age = new Date().getFullYear() - formatDate(props.birthDate);
   return (
     <div className="greeting">
-    {`My name is ${props.firstName} ${props.lastName}. I'm ${props.birthDate} years old`}
+    {`My name is ${props.firstName} ${props.lastName}. I'm ${age} years old`}
 </div>
   );
 }

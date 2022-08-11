@@ -8,4 +8,4 @@ import Greeting from './Greeting';
 
 const rootElement = document.querySelector("#root");
 
-ReactDOM.render(<Greeting firstName="John" lastName="Doe" birthDate={21}/>, rootElement);
+ReactDOM.render(<Greeting firstName="John" lastName="Doe" birthDate={`${new Date('2001-01-01T11:11:11.819z')}`}/>, rootElement);
