@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.scss";
-import Greeting from './Profile';
+import Profile from './Profile';
 
 const userData = {
     firstName: 'James',
@@ -12,4 +12,4 @@ const userData = {
 
 const rootElement = document.querySelector("#root");
 
-ReactDOM.render(<Greeting userData={userData}/>, rootElement);
+ReactDOM.render(<Profile userData={userData}/>, rootElement);
