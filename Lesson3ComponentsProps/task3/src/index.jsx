@@ -7,10 +7,10 @@ import Comment from "./Comment";
 const rootElement = document.querySelector("#root");
 
 const userInfo = {
-    user:{name: 'Tom',
+    name: 'Tom',
     avatarUrl: 'https://avatars1.githubusercontent.com'
-}
 };
+
 ReactDOM.render(
 <Comment
     author = {userInfo}
