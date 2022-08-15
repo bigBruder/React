@@ -4,4 +4,4 @@ import Toggler from "./Toggler";
 import './index.scss';
 
 const rootElem = document.querySelector('#root');
- ReactDOM.render(<Toggler status="Off"/>, rootElem);
+ ReactDOM.render(<Toggler />, rootElem);
