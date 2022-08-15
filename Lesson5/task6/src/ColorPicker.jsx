@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './index.scss';
 
-const CORAL = '#FF7F50';
-const BISQUE = '#FFE4C4';
-const AQUA = '#00FFFF';
-
 class ColorPicker extends Component {
   setTitleColor = color => {
     document.querySelector('.picker__title').textContent = color;
