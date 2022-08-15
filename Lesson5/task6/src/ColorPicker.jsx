@@ -2,11 +2,21 @@ import React, { Component } from 'react';
 import './index.scss';
 
 class ColorPicker extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: '',
+    };
+  }
   setTitleColor = color => {
-    document.querySelector('.picker__title').textContent = color;
+    this.setState({
+      color: (document.querySelector('.picker__title').textContent = color),
+    });
   };
   resetTitleColor = () => {
-    document.querySelector('.picker__title').textContent = '';
+    this.setState({
+      color: (document.querySelector('.picker__title').textContent = ''),
+    });
   };
 
   render() {
