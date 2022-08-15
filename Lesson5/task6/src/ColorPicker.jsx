@@ -10,9 +10,7 @@ class ColorPicker extends Component {
     document.querySelector('.picker__title').textContent = color;
   };
   resetTitleColor = () => {
-    this.setState({
-      color: '',
-    });
+    document.querySelector('.picker__title').textContent = '';
   };
 
   render() {
