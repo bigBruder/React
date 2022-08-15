@@ -10,33 +10,28 @@ class ColorPicker extends Component {
   }
   setTitleColor = color => {
     this.setState({
-      color: (document.querySelector('.picker__title').textContent = color),
-    });
-  };
-  resetTitleColor = () => {
-    this.setState({
-      color: (document.querySelector('.picker__title').textContent = ''),
+      color: color,
     });
   };
 
   render() {
     return (
       <div>
-        <div className="picker__title"></div>
+        <div className="picker__title">{this.state.color}</div>
         <div>
           <button
             onMouseEnter={() => this.setTitleColor('Coral')}
-            onMouseLeave={() => this.resetTitleColor()}
+            onMouseLeave={() => this.setTitleColor('')}
             className="picker__button picker__button_coral"
           ></button>
           <button
             onMouseEnter={() => this.setTitleColor('Aqua')}
-            onMouseLeave={() => this.resetTitleColor()}
+            onMouseLeave={() => this.setTitleColor('')}
             className="picker__button picker__button_aqua"
           ></button>
           <button
             onMouseEnter={() => this.setTitleColor('Bisque')}
-            onMouseLeave={() => this.resetTitleColor()}
+            onMouseLeave={() => this.setTitleColor('')}
             className="picker__button picker__button_bisque"
           ></button>
         </div>
