@@ -1,11 +1,5 @@
 import React from 'react';
 
-const Login = props => {
-  handleLogin = () => {
-    this.setState({
-      isLoggedIn: true,
-    });
-  };
-  <button onClick={props.handleLogin}>Login</button>;
-};
+const Login = props => <button onClick={props.onLogin}>Login</button>;
+
 export default Login;
