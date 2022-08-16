@@ -4,4 +4,4 @@ import Status from './Status';
 import './index.scss';
 
 const rootElem = document.querySelector('#root');
-ReactDOM.render(<Status />, rootElem);
+ReactDOM.render(<Status isOnline />, rootElem);

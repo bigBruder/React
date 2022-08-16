@@ -2,28 +2,9 @@ import React, { Component } from 'react';
 import Online from './Online';
 import Offline from './Offline';
 
-class Status extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOnline: false,
-    };
-  }
-
-  handleOnline = () => {
-    this.setState({
-      isOnline: true,
-    });
-  };
-
-  render() {
-    return (
-      <div className="status">
-        {this.state.isOnline ? <Online /> : <Offline onClick={this.handleOnline} />}
-      </div>
-    );
-  }
-}
+const Status = props => {
+  return <div className="status">{props.isOnline ? <Online /> : <Offline />}</div>;
+};
 
 export default Status;
 
@@ -52,3 +33,16 @@ export default Status;
 // };
 
 // export default Status;
+
+// constructor(props) {
+//   super(props);
+//   this.state = {
+//     isOnline: false,
+//   };
+// }
+
+// handleOnline = () => {
+//   this.setState({
+//     isOnline: true,
+//   });
+// };
