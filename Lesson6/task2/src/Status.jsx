@@ -19,7 +19,6 @@ class Status extends Component {
   render() {
     return (
       <div className="status">
-        <Status isOnline={this.state.isOnline} />
         {this.state.isOnline ? <Online /> : <Offline onClick={this.handleOnline} />}
       </div>
     );
@@ -38,3 +37,18 @@ export default Status;
 )}
 </div> */
 // }
+
+// import React from 'react';
+// import './index.scss';
+// import Online from './Online';
+// import Offline from './Offline';
+
+// const Status = props => {
+//   if (props.isOnline) {
+//     return <Online />;
+//   }
+
+//   return <Offline />;
+// };
+
+// export default Status;
