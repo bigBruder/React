@@ -12,10 +12,11 @@ class Life extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log('shouldComponentUpdate(nextProps, nextState):decide to render or not to render');
+    return nextProps;
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate(prevProps, prevState):some updates based on new props');
+    console.log(`componentDidUpdate(${prevProps}, prevState):some updates based on new props`);
   }
 
   componentWillUnmount() {
@@ -23,7 +24,8 @@ class Life extends Component {
   }
 
   render() {
-    return console.log('return React element to build DOM');
+    console.log('return React element to build DOM');
+    return <div>РОМА</div>;
   }
 }
 
