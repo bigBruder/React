@@ -13,6 +13,10 @@ class Dimensions extends Component {
     this.setDimensions(innerWidth, innerWidth);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
   onResize = e => {
     const { innerWidth, innerHeight } = e.target;
     this.setDimensions(innerWidth, innerHeight);
@@ -26,20 +30,16 @@ class Dimensions extends Component {
     document.title = `${innerWidth} x ${innerHeight}`;
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps, nextState);
-    console.log('shouldComponentUpdate(nextProps, nextState):decide to render or not to render');
-    return nextProps;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log(nextProps, nextState);
+  //   console.log('shouldComponentUpdate(nextProps, nextState):decide to render or not to render');
+  //   return nextProps;
+  // }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps);
-    console.log('componentDidUpdate(prevProps, prevState):some updates based on new props');
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(prevProps);
+  //   console.log('componentDidUpdate(prevProps, prevState):some updates based on new props');
+  // }
 
   render() {
     return <div className="dimensions">{`${this.state.width}px - ${this.state.height}px`}</div>;
