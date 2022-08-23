@@ -17,9 +17,8 @@ class UsersList extends Component {
 
   render() {
     const filteredUsers = this.props.users.filter(
-      user =>
-        this.state.filterText.includes(user.name.toUpperCase()) ||
-        this.state.filterText.includes(user.name.toLowerCase()),
+      user => this.state.filterText.includes(user.name),
+      // this.state.filterText.includes(user.name.toLowerCase()),
     );
 
     return (
