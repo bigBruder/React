@@ -29,7 +29,8 @@ class UserForm extends Component {
       <form
         className="login-form"
         onSubmit={e => {
-          onSubmit(this.state, e);
+          e.preventDefault();
+          onSubmit(this.state);
         }}
       >
         <h1 className="form-title">Profile</h1>
