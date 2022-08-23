@@ -4,7 +4,9 @@ const Filter = ({ filterText, count, onChange }) => {
   return (
     <div className="filter">
       <span className="filter__count">{count}</span>
-      <input onChange={onChange} type="text" className="filter__input" value="a" />
+      <input onChange={onChange} type="text" className="filter__input" value={filterText} />
     </div>
   );
 };
+
+export default Filter;

@@ -3,39 +3,37 @@ import User from './User';
 import Filter from './Filter';
 
 class UsersList extends Component {
- 
-    state = {
+  state = {
     filterText: '',
-    };
-  
+  };
 
-  // handleChange = e => {
-  //   const { name, value, checked, type } = e.target;
+  handleChange = e => {
+    const { value } = e.target;
 
-  //   const val = type === 'checkbox' ? checked : value;
-
-  //   this.setState({
-  //     [name]: val,
-  //   });
-  // };
-
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   console.log(this.state);
-  // };
-
-  usersList = this.props.users;
+    this.setState({
+      filterText: value,
+    });
+  };
 
   render() {
-const filteredUsers = this.props.users.filter()
-
+    const filteredUsers = this.props.users.filter(
+      user =>
+        this.state.filterText.includes(user.name.toUpperCase()) ||
+        this.state.filterText.includes(user.name.toLowerCase()),
+    );
 
     return (
       <>
-      <Filter filterText={this.state.filterText} count='1' onChange={}/>
-      {filteredUsers.map <User key={user.id} name={} age={}/>}
+        <Filter
+          filterText={this.state.filterText}
+          count={filteredUsers.length}
+          onChange={this.handleChange}
+        />
+        {filteredUsers.map(user => (
+          <User key={user.id} name={user.name} age={user.age} />
+        ))}
       </>
     );
   }
 }
-export default UserList;
+export default UsersList;
