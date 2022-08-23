@@ -16,10 +16,14 @@ class UsersList extends Component {
   };
 
   render() {
-    const filteredUsers = this.props.users.filter(
-      user => this.state.filterText.toLowerCase().includes(user.name.toLowerCase()),
-      // this.state.filterText.includes(user.name.toLowerCase()),
-    );
+    let filteredUsers;
+    if (this.state.filterText.length === 0) {
+      filteredUsers = this.props.users;
+    } else
+      filteredUsers = this.props.users.filter(
+        user => this.state.filterText.toLowerCase().includes(user.name.toLowerCase()),
+        // this.state.filterText.includes(user.name.toLowerCase()),
+      );
 
     return (
       <>
