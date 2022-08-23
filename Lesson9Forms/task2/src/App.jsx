@@ -2,10 +2,9 @@ import React from 'react';
 
 import UserForm from './UserForm';
 
-const App = state => {
-  const createUser = event => {
-    event.preventDefault();
-    console.log(state);
+const App = () => {
+  const createUser = obj => {
+    console.log(obj);
   };
 
   return <UserForm onSubmit={createUser} />;

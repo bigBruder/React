@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  constructor(props) {
-    super(props);
-    state = {
-      name: '',
-      student: '',
-      accupation: '',
-      about: '',
-    };
-  }
+  state = {
+    name: '',
+    student: '',
+    accupation: '',
+    about: '',
+  };
 
   handleChange = e => {
     const { name, value, checked, type } = e.target;
@@ -27,8 +24,9 @@ class UserForm extends Component {
   // };
 
   render() {
+    const { onSubmit } = this.props;
     return (
-      <form className="login-form" onSubmit={props.onSubmit}>
+      <form className="login-form" onSubmit={()=>onSubmit(this.state)}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
