@@ -8,20 +8,20 @@ const getTimeWithOffset = offset => {
     return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 }
 
-const formatDate = offsetData => moment(getTimeWithOffset(offsetData)).format('LTS')
+// const formatDate = offsetData => moment(getTimeWithOffset(offsetData)).format('LTS')
 
     class Clock extends Component{
         constructor(props){
             super(props);
         this.state = {
            location: props.location,
-           time: formatDate(props.offset)
+           time: moment(getTimeWithOffset(props.offset)).format('LTS')
           };
         //   const time = moment(getTimeWithOffset(props.offset)).format('LTS');
         //   console.log(time);
           setInterval(()=>{
             this.setState({
-                time:formatDate(props.offset)
+                time: moment(getTimeWithOffset(props.offset)).format('LTS')
             });
           },1000)
         }

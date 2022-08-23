@@ -4,7 +4,7 @@ const NumbersList = ({ numbers }) => {
   return (
     <ul>
       {numbers.map(number => (
-        <li>{number}</li>
+        <li key={number}>{number}</li>
       ))}
     </ul>
   );

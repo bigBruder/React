@@ -37,6 +37,7 @@ module.exports = (env, argv) => {
       extensions: [".js", ".jsx"]
     },
     devServer: {
+      open: true,
       hot: true
     }
   };

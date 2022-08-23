@@ -6,6 +6,4 @@ const rootElement = document.querySelector("#root");
 
 const element = <h1 class="title">Todo List</h1>;
 
-console.log(element);
-
 ReactDOM.render(element, rootElement);

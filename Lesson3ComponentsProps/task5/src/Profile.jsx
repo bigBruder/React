@@ -4,7 +4,6 @@ import moment from "moment";
 export default function Profile(props) {
 
   const formatDate = birthDate => moment(birthDate).format("DD MMM YY");
-  console.log(props);
   return (
     <>
     <div className="profile__name">
