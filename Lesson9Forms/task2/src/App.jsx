@@ -3,7 +3,8 @@ import React from 'react';
 import UserForm from './UserForm';
 
 const App = () => {
-  const createUser = obj => {
+  const createUser = (obj, event) => {
+    event.preventDefault();
     console.log(obj);
   };
 
