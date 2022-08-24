@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  // handleChange = e => {
-  //   const { name, value, checked, type } = e.target;
-
-  //   const val = type === 'checkbox' ? checked : value;
-
-  //   this.setState({
-  //     [name]: val,
-  //   });
-  // };
-
   // handleSubmit = event => {
   //   event.preventDefault();
   // const formData = [...new FormData(formRef)].reduce(
@@ -25,11 +15,10 @@ class UserForm extends Component {
   };
 
   render() {
-    // const formData = [...new FormData(this.formRef)].reduce(
-    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
-    //   {},
-    // );
-
+    const formData = [...new FormData(this.formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
     const { onSubmit } = this.props;
 
     return (
@@ -38,7 +27,7 @@ class UserForm extends Component {
         className="login-form"
         onSubmit={e => {
           e.preventDefault();
-          onSubmit(this.formRef);
+          onSubmit(formData);
         }}
       >
         <h1 className="form-title">Profile</h1>
