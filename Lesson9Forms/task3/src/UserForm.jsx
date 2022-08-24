@@ -13,10 +13,10 @@ class UserForm extends Component {
 
   // handleSubmit = event => {
   //   event.preventDefault();
-  //   const formData = [...new FormData(this.formRef)].reduce(
-  //     (acc, [name, value]) => ({ ...acc, [name]: value }),
-  //     {},
-  //   );
+  // const formData = [...new FormData(formRef)].reduce(
+  //   (acc, [name, value]) => ({ ...acc, [name]: value }),
+  //   {},
+  // );
   //   console.log(formData);
   // };
 
@@ -25,14 +25,20 @@ class UserForm extends Component {
   };
 
   render() {
+    // const formData = [...new FormData(this.formRef)].reduce(
+    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
+    //   {},
+    // );
+
     const { onSubmit } = this.props;
+
     return (
       <form
         ref={this.setRef}
         className="login-form"
-        // onSubmit={this.handleSubmit}
         onSubmit={e => {
-          onSubmit(e);
+          e.preventDefault();
+          onSubmit(this.formRef);
         }}
       >
         <h1 className="form-title">Profile</h1>
