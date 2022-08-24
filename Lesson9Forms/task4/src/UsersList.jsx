@@ -21,7 +21,7 @@ class UsersList extends Component {
       filteredUsers = this.props.users;
     } else
       filteredUsers = this.props.users.filter(
-        user => this.state.filterText.toLowerCase().includes(user.name.toLowerCase()),
+        user => user.name.toLowerCase().includes(this.state.filterText.toLowerCase()),
         // this.state.filterText.includes(user.name.toLowerCase()),
       );
 
