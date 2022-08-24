@@ -17,7 +17,7 @@ class UsersList extends Component {
 
   render() {
     let filteredUsers;
-    if (this.state.filterText.length === 0) {
+    if (this.state.filterText === '') {
       filteredUsers = this.props.users;
     } else
       filteredUsers = this.props.users.filter(
