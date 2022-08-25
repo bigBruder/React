@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-const User =({userData})=>{
-  
-    if (userData) {
+class User extends Component {
+  render() {
+    if (!this.props.userData) {
       return null;
     }
 
-    const { avatar_url, location, name } = userData;
+    const { avatar_url, location, name } = this.props.userData;
     return (
       <div className="user">
         <img alt="User Avatar" src={avatar_url} className="user__avatar" />
@@ -17,6 +17,6 @@ const User =({userData})=>{
       </div>
     );
   }
-
+}
 
 export default User;
