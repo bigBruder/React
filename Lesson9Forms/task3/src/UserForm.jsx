@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  // const formData = [...new FormData(formRef)].reduce(
-  //   (acc, [name, value]) => ({ ...acc, [name]: value }),
-  //   {},
-  // );
-  //   console.log(formData);
-  // };
+  handleSubmit = event => {
+    event.preventDefault();
+    const formData = [...new FormData(formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
+    console.log(formData);
+  };
 
   setRef = node => {
     this.formRef = node;
   };
 
   render() {
-    // const formData = [...new FormData(this.formRef)].reduce(
-    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
-    //   {},
-    // );
     const { onSubmit } = this.props;
 
     return (
@@ -26,7 +22,8 @@ class UserForm extends Component {
         ref={this.setRef}
         className="login-form"
         onSubmit={e => {
-          onSubmit(this.formRef, e);
+          e.preventDefault();
+          onSubmit(formData);
         }}
       >
         <h1 className="form-title">Profile</h1>
