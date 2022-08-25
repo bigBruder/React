@@ -3,7 +3,7 @@ import React from 'react';
 import UserForm from './UserForm';
 
 const App = () => {
-  const createUser = ( this.formRef, event) => {
+  const createUser = (formRef, event) => {
     event.preventDefault();
     const formData = [...new FormData(formRef)].reduce(
       (acc, [name, value]) => ({ ...acc, [name]: value }),
