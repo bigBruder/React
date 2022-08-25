@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ProductList extends Component {
   render() {
-    const total = this.state.cartItems.reduce((acc, items) => acc + items.price, 0);
+    const total = this.props.cartItems.reduce((acc, items) => acc + items.price, 0);
 
     return (
       <div className="products">

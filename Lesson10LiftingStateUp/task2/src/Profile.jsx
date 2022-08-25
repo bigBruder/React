@@ -1,5 +1,5 @@
 import React from 'react';
-import UserForm from './UseForm';
+import UserForm from './UserForm';
 
 const Profile = ({ userData, handleChange }) => (
   <div className="column">
