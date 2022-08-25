@@ -3,8 +3,13 @@ import React from 'react';
 import UserForm from './UserForm';
 
 const App = () => {
-  const createUser = obj => {
-    console.log(obj);
+  const createUser = ( this.formRef, event) => {
+    event.preventDefault();
+    const formData = [...new FormData(formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
+    console.log(formData);
   };
 
   return <UserForm onSubmit={createUser} />;

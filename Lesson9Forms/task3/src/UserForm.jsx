@@ -15,10 +15,10 @@ class UserForm extends Component {
   };
 
   render() {
-    const formData = [...new FormData(this.formRef)].reduce(
-      (acc, [name, value]) => ({ ...acc, [name]: value }),
-      {},
-    );
+    // const formData = [...new FormData(this.formRef)].reduce(
+    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
+    //   {},
+    // );
     const { onSubmit } = this.props;
 
     return (
@@ -26,8 +26,7 @@ class UserForm extends Component {
         ref={this.setRef}
         className="login-form"
         onSubmit={e => {
-          e.preventDefault();
-          onSubmit(formData);
+          onSubmit(this.formRef, e);
         }}
       >
         <h1 className="form-title">Profile</h1>
