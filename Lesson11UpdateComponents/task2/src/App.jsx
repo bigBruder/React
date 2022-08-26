@@ -1,0 +1,35 @@
+import React, { Component } from 'react';
+import Dialog from './Dialog';
+
+class App extends Component {
+  state = {
+    isOpen: false,
+  };
+
+  hideDialog = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  showDialog = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  render() {
+    return (
+      <div className="app">
+        <button className="btn" onClick={this.showDialog}>
+          Show dialog
+        </button>
+        <Dialog isOpen={this.state.isOpen} onClose={this.hideDialog} title="some text">
+          <p>Some text</p>
+        </Dialog>
+      </div>
+    );
+  }
+}
+
+export default App;
