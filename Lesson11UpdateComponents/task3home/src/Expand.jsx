@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Expand = ({ isOpen, children, title, onClick }) => {
-  const content = isOpen ? <div className="expand__content">{children}</div> : <div></div>;
-
   const chevron = isOpen ? (
     <i className="fas fa-chevron-up"></i>
   ) : (
@@ -17,7 +15,7 @@ const Expand = ({ isOpen, children, title, onClick }) => {
           {chevron}
         </button>
       </div>
-      {content}
+      {isOpen ? <div className="expand__content">{children}</div> : <div></div>}
     </div>
   );
 };
