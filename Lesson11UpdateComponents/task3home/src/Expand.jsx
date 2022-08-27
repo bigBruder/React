@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from 'fortawesome/free-solid-svg-icons';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Expand = ({ isOpen, children, title, onClick }) => {
   const content = isOpen ? <div className="expand__content">{children}</div> : <div></div>;
