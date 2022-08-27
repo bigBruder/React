@@ -1,14 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Expand = ({ isOpen, children, title, onClick }) => {
   const content = isOpen ? <div className="expand__content">{children}</div> : <div></div>;
 
   const chevron = isOpen ? (
-    <FontAwesomeIcon icon={faChevronUp} />
+    <i className="fas fa-chevron-down"></i>
   ) : (
-    <FontAwesomeIcon icon={faChevronDown} />
+    <i className="fas fa-chevron-up"></i>
   );
 
   return (
@@ -16,7 +14,7 @@ const Expand = ({ isOpen, children, title, onClick }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onClick}>
-          <i>{chevron}</i>
+          {chevron}
         </button>
       </div>
       {content}
