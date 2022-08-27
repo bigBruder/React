@@ -1,14 +1,21 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-class Numbers extends PureComponent {
-  render() {
-    return (
-      <div className="number">
-        <span className="number__title">{this.props.title}</span>
-        <span className="number__value">{this.props.number}</span>
-      </div>
-    );
+const Dialog = ({ isOpen, children, title, onClose }) => {
+  if (!isOpen) {
+    return null;
   }
-}
 
-export default Numbers;
+  return (
+    <div className="dialog">
+      <div className="dialog__heading">
+        <h4 className="dialog__title">{title}</h4>
+        <button className="dialog__close-btn" onClick={onClose}>
+          +
+        </button>
+      </div>
+      <div className="dialog__content">{children}</div>
+    </div>
+  );
+};
+
+export default Dialog;

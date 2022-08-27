@@ -14,7 +14,7 @@ class App extends Component {
 
   showDialog = () => {
     this.setState({
-      isOpen: false,
+      isOpen: true,
     });
   };
 
@@ -25,7 +25,7 @@ class App extends Component {
           Show dialog
         </button>
         <Dialog isOpen={this.state.isOpen} onClose={this.hideDialog} title="some text">
-          <p>Some text</p>
+          <p>Use immutable array methods to work with data. It will help to avoid bugs</p>
         </Dialog>
       </div>
     );
