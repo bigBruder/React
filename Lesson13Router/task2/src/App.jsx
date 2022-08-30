@@ -14,7 +14,7 @@ const App = () => (
           <Link to="/products">Products</Link>
         </li>
       </ul>
-      <Route exect path="/">
+      <Route exact path="/">
         <Home />
       </Route>
       <Route path="/products" component={Products} />
