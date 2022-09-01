@@ -17,7 +17,7 @@ class Auth extends Component {
     };
   }
 
-  handleLogin = () => {
+  loginHandler = () => {
     this.setState({
       isSpinnerTime: true,
     });
@@ -28,12 +28,9 @@ class Auth extends Component {
         isLoggedIn: true,
       });
     }, 2000);
-    // this.setState({
-    //   isLoggedIn: true,
-    // });
   };
 
-  handleLogout = () => {
+  logoutHandler = () => {
     this.setState({
       isLoggedIn: false,
     });
@@ -44,9 +41,9 @@ class Auth extends Component {
       return <Spinner size="100px" />;
     }
     return this.state.isLoggedIn ? (
-      <Logout onLogout={this.handleLogout} />
+      <Logout onLogout={this.logoutHandler} />
     ) : (
-      <Login onLogin={this.handleLogin} />
+      <Login onLogin={this.loginHandler} />
     );
   }
 }
