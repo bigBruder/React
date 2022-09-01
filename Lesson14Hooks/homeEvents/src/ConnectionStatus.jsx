@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const ConnectionStatus = () => {
-  const [state, setStatus] = useState('online');
+  const [state, setStatus] = useState({ status: 'online' });
 
   useEffect(() => {
     const onOffline = () => {
