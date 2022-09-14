@@ -4,32 +4,32 @@ import Pagination from './Pagination';
 
 const UsersList = ({users}) => { 
 
-const [state, setState] = useState({currentPage: 1, currentUsers: users.slice(0,3)})
+const [state, setState] = useState({currentPage: 1, a:0, b:3, currentUsers: users.slice(0,3)})
 
-const { currentUsers, currentPage } = state;
-
-let a = 0;
-let b = 3;
+const { currentUsers, currentPage, a, b } = state;
 
 const goPrev = () => {
-  a = a - 3;
-  b = b - 3;
-  console.log(a, b)
+  const c = a-3;
+  const d = b-3;
     setState({
-      currentUsers: users.slice(a,b),
+      a:c,
+      b:d,
+      currentUsers: users.slice(c,d),
       currentPage: currentPage - 1
     })
-  
+    console.log(a, b)
 }
 
 const goNext = () => {
-  a = a + 3;
-  b = b + 3;
-  console.log(a, b)
+  const c = a+3;
+  const d = b+3;
     setState({
-      currentUsers: users.slice(a,b),
+      a:c,
+      b:d,
+      currentUsers: users.slice(c,d),
       currentPage: currentPage + 1
     })
+    console.log(a, b)
 }
 
         return (
