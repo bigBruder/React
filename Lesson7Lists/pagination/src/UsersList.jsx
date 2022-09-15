@@ -34,7 +34,7 @@ const UsersList = ({ users }) => {
           goNext={goNext}
           currentPage={currentPage}
           totalItems={users.length}
-          itemsPerPage={itemsPerPage}
+          itemsPerPage={3}
         />
       }
       {currentUsers.map(user => (
