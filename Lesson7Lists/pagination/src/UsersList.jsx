@@ -5,34 +5,26 @@ import Pagination from './Pagination';
 const UsersList = ({ users }) => {
   const [state, setState] = useState({
     currentPage: 1,
-    currentFirstIndex: 0,
-    currentSecondIndex: 3,
-    currentUsers: users.slice(0, 3),
   });
 
-  const { currentUsers, currentPage, currentFirstIndex, currentSecondIndex } = state;
+  const { currentPage } = state;
 
   const goPrev = () => {
-    const a = currentFirstIndex - 3;
-    const b = currentSecondIndex - 3;
     setState({
-      currentFirstIndex: a,
-      currentSecondIndex: b,
-      currentUsers: users.slice(a, b),
       currentPage: currentPage - 1,
     });
   };
 
   const goNext = () => {
-    const a = currentFirstIndex + 3;
-    const b = currentSecondIndex + 3;
     setState({
-      currentFirstIndex: a,
-      currentSecondIndex: b,
-      currentUsers: users.slice(a, b),
       currentPage: currentPage + 1,
     });
   };
+
+  const toIndex = currentPage * 3;
+  const fromIndex = toIndex - 3;
+
+  const currentUsers = users.slice(fromIndex, toIndex);
 
   return (
     <div className="users">
