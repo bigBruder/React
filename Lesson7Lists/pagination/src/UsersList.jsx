@@ -21,8 +21,10 @@ const UsersList = ({ users }) => {
     });
   };
 
-  const toIndex = currentPage * 3;
-  const fromIndex = toIndex - 3;
+  const itemsPerPage = 3;
+
+  const toIndex = currentPage * itemsPerPage;
+  const fromIndex = toIndex - itemsPerPage;
 
   const currentUsers = users.slice(fromIndex, toIndex);
 
@@ -34,7 +36,7 @@ const UsersList = ({ users }) => {
           goNext={goNext}
           currentPage={currentPage}
           totalItems={users.length}
-          itemsPerPage={3}
+          itemsPerPage={itemsPerPage}
         />
       }
       {currentUsers.map(user => (
